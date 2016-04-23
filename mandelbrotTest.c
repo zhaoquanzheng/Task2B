@@ -139,3 +139,34 @@ static void testEscapeSteps(void) {
 
    printf (" ... escapeSteps tests passed!\n");
 }
+
+int escapeSteps(double x, double y) {
+      int distance
+      int n = 0
+      Complex c,z;
+      c.real = x;
+      c.imaginary = y;
+      z.real = 0;
+      z. imaginary = 0;
+      disatnce = sqrt(z.real * z.real + z.imaginary * z.imaginary);  
+      while (distance < 2 && n < MAX_ITERATIONS) {
+         z = add (multiply (z, z), c);
+         distance = sqrt( z.real * z.real + z.imaginary * z.imaginary);
+         n++;
+      }
+      return n;
+      
+}
+
+Complex add (Complex a, Complex b) {
+   a.real =+ b.real;
+   a.imaginary += b.imaginary;
+   return a;
+}
+
+Complex multiply (Complex a, Complex b) {
+   Complex answer;
+   answer. real = a.real * b.real - a.imaginary * b.imaginary;
+   answer.imaginary = a.real * b.imaginary + a.imaginary * b.real;
+   return answer;
+}
