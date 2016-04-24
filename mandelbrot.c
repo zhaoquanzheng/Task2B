@@ -15,22 +15,15 @@ struct _complexNumber{
    double imaginary;
 };
 
-//complex add (complex a, complex b);
-//complex multiply (complex a, complex b);
+complex multiply (complex a, complex b);
 
 int escapeSteps(double x,double y){
    int n = 0;
    double distance = 0;
    complex z;
-//   c.real = x;
-//   c.imaginary = y;
    z.real = 0;
    z.imaginary = 0;
-//   distance = sqrt(x*x + y*y);  
-/*   if(distance < 2){
-      n++;
-   }
-*/
+
    printf("%lf\n",distance);
    double a,b;
    while (distance < 2 && n < MAX_ITERATIONS) {
@@ -44,7 +37,7 @@ int escapeSteps(double x,double y){
       z.real   += x;
       z.imaginary+=y;
       distance = sqrt( (z.real * z.real) + (z.imaginary * z.imaginary));
-      printf("%lf,%lf\ndistance: %lf\n",z.real,z.imaginary,distance);
+//      printf("%lf,%lf\ndistance: %lf\n",z.real,z.imaginary,distance);
       n++;
    }
    printf("assert case:%lf,%lf, returning:%d",x,y,n);
@@ -58,11 +51,11 @@ complex add (complex a, complex b) {
    sum.imaginary = a.imaginary + b.imaginary;
    return sum;
 }
-
+*/
 complex multiply (complex a, complex b) {
    complex answer;
    answer.real = a.real*b.real - a.imaginary*b.imaginary;
    answer.imaginary = a.real*b.imaginary + a.imaginary*b.real;
    return answer;
 }
-*/
+
